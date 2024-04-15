@@ -86,7 +86,15 @@ void Store::loadProductsFromFile() {
   if (file.is_open()) {
     while (getline(file, line)) {
       vector<string> tokens;
-      //split(line, ',', tokens);
+
+      // جداسازی مقادیر با استفاده از ','
+      for (int i = 0; i < line.size(); ++i) {
+        if (line[i] == ',') {
+          tokens.push_back(line.substr(0, i));
+          line.erase(0, i + 1);
+        }
+      }
+      tokens.push_back(line); // آخرین مقدار
 
       if (tokens.size() == 3) {
         string name = tokens[0];
@@ -135,8 +143,7 @@ int main() {
         cout << "انتخاب نامعتبر!" << endl;
     }
   } while (choice != 3);
-
-  // ذخیره محصولات در فایل قبل از خروج از برنامه
+    //
   store.saveProductsToFile();
 
   return 0;
