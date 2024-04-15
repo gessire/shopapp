@@ -105,7 +105,7 @@ void Store::loadProductsFromFile() {
       }
     }
     file.close();
-    cout << "محصولات با موفقیت بارگذاری شدند!" << endl;
+    cout << "Loaded" << endl;
   } else {
     cout << "فایل محصولات یافت نشد!" << endl;
   }
@@ -121,12 +121,12 @@ int main() {
 
   do {
     cout << "----------------------------------------" << endl;
-    cout << "منوی فروشگاه:" << endl;
-    cout << "1. ثبت محصول" << endl;
-    cout << "2. نمایش محصولات" << endl;
-    cout << "3. خروج از برنامه" << endl;
+    cout << "Menu:" << endl;
+    cout << "1. Add product" << endl;
+    cout << "2. Show products" << endl;
+    cout << "3. Exit" << endl;
     cout << "----------------------------------------" << endl;
-    cout << "انتخاب خود را وارد کنید: ";
+    cout << "Select: ";
     cin >> choice;
 
     switch (choice) {
